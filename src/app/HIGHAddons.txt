@@ -1,0 +1,9 @@
+HIGH
+
+
+1) need to OTP login for both
+2) customise nav bar
+3) start desiging cutomer pages
+4) show car data in card format with pictures
+
+

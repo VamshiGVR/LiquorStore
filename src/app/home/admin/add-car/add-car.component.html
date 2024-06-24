@@ -1,0 +1,58 @@
+<!--class must be added as modal or else it wont pop when clicked instead it will show always-->
+<div class="container d-flex justify-content-center">
+  <form (ngSubmit)="OnSubmit(carorder)">
+    <h2>ADD VECHILE</h2>
+    <label class=" form-label">MAKE: </label>
+    <select class="form-select" name="make" [(ngModel)]="carorder.make">
+      <option>PLEASE CHOOSE MAKE</option>
+      <option value="AUDI">AUDI</option>
+      <option value="BMW">BMW</option>
+      <option value="CHEVROLET">CHEVROLET</option>
+      <option value="CHRYSLER">CHRYSLER</option>
+      <option value="DODGE">DODGE</option>
+      <option value="FORD">FORD</option>
+      <option value="GMC">GMC</option>
+      <option value="HONDA">HONDA</option>
+      <option value="HYUNDAI">HYUNDAI</option>
+      <option value="JEEP">JEEP</option>
+      <option value="KIA">KIA</option>
+      <option value="LAND ROVER">LAND ROVER</option>
+      <option value="LEXUS">LEXUS</option>
+      <option value="MAZDA">MAZDA</option>
+      <option value="MERCEDES-BENZ">MERCEDES-BENZ</option>
+      <option value="MITSUBISHI">MITSUBISHI</option>
+      <option value="PORSCHE">PORSHE</option>
+      <option value="SUBARU">SUBARU</option>
+      <option value="TOYOTO">TOYOTO</option>
+      <option value="VOLKSWAGEN">VOLKSWAGEN</option>
+      <option value="VOLVO">VOLVO</option>
+    </select>
+
+    <label class=" form-label">MODEL: </label>
+    <input class="form-control" type="text" name="model" placeholder="MODEL" [(ngModel)]="carorder.model" required>
+
+    <label class=" form-label">COLOUR: </label>
+    <input class="form-control" type="text" name="color" placeholder="COLOUR" [(ngModel)]="carorder.color">
+    <label class=" form-label">$PRICE: </label>
+    <input class="form-control" type="text" name="price" placeholder="$PRICE" [(ngModel)]="carorder.price">
+    <label class=" form-label">YEAR </label>
+    <input class="form-control" type="text" name="year" placeholder="YEAR" [(ngModel)]="carorder.year">
+    <button class="btn btn-outline-success mt-3" type="submit">SUBMIT</button>
+    <button class="btn btn-outline-danger mt-3" type="button">CLEAR</button>
+  </form>
+</div>
+
+<!--div *ngIf="isModalVisible" id="AddedSuccessfullyModal" class="modal">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header bg-success">DATA ADDED SUCCESSFULLY!!!</div>
+      <div class="modal-body">
+        <p>{{carorder.make}} {{this.message}}
+        <p>
+      </div>
+      <div class="modal-footer">
+        <button class="btn btn-close" (click)="CloseModal()"></button>
+      </div>
+    </div>
+  </div>
+</div>-->

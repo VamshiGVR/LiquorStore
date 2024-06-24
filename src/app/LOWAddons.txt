@@ -1,0 +1,5 @@
+1) change footer content
+2) add about info
+3) customise logo
+4) Add spcae between login and signup pages
+5) Add cotnact info
