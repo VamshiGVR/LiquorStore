@@ -1,18 +1,21 @@
+#THIS IS CREATED ONLY FOR LEARNING PURPOSE
+# Name of flow
 name: Test FE-ORDER
+
+#triggered when 
 on: push
 jobs: 
     test:
+        # runners : windows, mac, and ubuntu
         runs-on: ubuntu-latest
         steps:
-            - name: check out changes
-            uses: actions/checkout@v4
-            -name: set uo Python 
-            uses: actions/setup-python@v5
-            with:
-                python-version:3.9
-            -name: install dependencies 
-            run: npm ci
-            -name: runtests
-            run: npm test
-
-              
+            - name: check out changes.
+              uses: actions/checkout@v4
+            - name: set uo Python 
+              uses: actions/setup-python@v5
+              with:
+                python-version: 3.9
+            - name: install dependencies 
+              run: npm ci
+            - name: runtests
+              run: npm test
