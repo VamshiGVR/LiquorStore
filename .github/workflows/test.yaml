@@ -1,8 +1,13 @@
-name: test
+name: CarOrder
+
 on: push
-jobs: 
-    test:
-        runs-on: ubuntu-latest
-        steps: 
-            - name: Get checkout
-              uses: actions/checkout@v4 
+
+jobs:
+  job_1:
+    runs-on: ubuntu-latest
+    steps:
+      - name: running ng serve
+        run: |
+            ng-serve
+      - name: Done
+        run: echo Working
