@@ -1,0 +1,9 @@
+# To learning purpose using an output file
+name: OUTPUT INFORMATION.
+on: workflow_dispatch
+jobs:
+    info:
+        runs-on: ubuntu_latest
+        steps:
+            - name: Output GitHub
+              run: echo "${{toJSON(github)}}"

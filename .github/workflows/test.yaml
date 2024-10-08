@@ -1,0 +1,13 @@
+name: CarOrder
+
+on: push
+
+jobs:
+  job_1:
+    runs-on: ubuntu-latest
+    steps:
+      - name: running ng serve
+        run: |
+            ng-serve
+      - name: Done
+        run: echo Working
