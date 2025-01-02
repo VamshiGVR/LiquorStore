@@ -37,7 +37,7 @@ This project is a Replica of ordering a car online.
 2) DBeaver
 3) MongoDB
 
-## Containers & Virtualizatoin
+## Containers & Virtualization
 
 1) Docker
 2) Kubernates
