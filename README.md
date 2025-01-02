@@ -11,10 +11,38 @@ This project is a Replica of ordering a car online.
 6) BOOT STRAP
 7) CSS
 
+# NEED TO ADD
+## Version Control
+1) Git
+2) Github
+3) GitLab
+4) BitBucket
 
+## Build tools
+1) webpack
+2) Gradle
+3) Maven
 
+## CI/CD Tools
+1) Jenkins
 
+## Database tools
+1) MYSQL workbench
+2) DBeaver
+3) MongoDB
 
+## Containers & Virtualizatoin 
+1) Docker
+2) Kubernates
+
+## APIs & Testing
+1) Postman
+2) Swagger
+3) Selenium
+
+## CLOUD SERVICES
+1) AWS 
+2) Azure
 
 # FECarOrder
 
