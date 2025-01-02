@@ -1,3 +1,21 @@
+# PROJECT
+
+This project is a Replica of ordering a car online.
+
+## TOOLS
+1) Angular 
+2) JAVA SPRING
+3) MySQL
+4) HTML
+5) TypeScript
+6) BOOT STRAP
+7) CSS
+
+
+
+
+
+
 # FECarOrder
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 17.3.3.
