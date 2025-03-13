@@ -80,3 +80,18 @@ Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To u
 ## Further help
 
 To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+
+
+## FUNCTIONALITY
+Store
+1) Maintains inventory
+2) 
+
+Customers
+1) Stock availabilty
+2) Shopping cart
+3) pickup order
+4) Place order
+5) Payment method
+6) Customer login
+7) 
