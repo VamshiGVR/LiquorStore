@@ -40,7 +40,5 @@ public class Liquor {
 	
 	@Column(name ="CODE")
 	private long code;
-	
-		
 
 }
