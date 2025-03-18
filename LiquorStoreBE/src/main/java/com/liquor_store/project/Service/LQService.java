@@ -30,7 +30,7 @@ public class LQService {
 	}
 
 
-	public String updateBottles() {
+	public String updateBottles(Liquor liquor) {
 		return "Bottle";
 	}
 
