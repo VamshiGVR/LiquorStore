@@ -21,7 +21,7 @@ public class Liquor {
 	
 	@Id
 	@GeneratedValue(strategy= GenerationType.IDENTITY)
-	private Long id;
+	public Long id;
 	
 	@Column(name ="LIQUOR_BRAND")
 	private String brand;
