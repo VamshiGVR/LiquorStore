@@ -1,5 +1,7 @@
 package com.liquor_store.project.Service;
 
+import java.util.List;
+
 import org.springframework.stereotype.Service;
 
 import com.liquor_store.project.Entity.Liquor;
@@ -10,19 +12,30 @@ public class LQService {
 	
 	private LQRepository lqRepository;
 	
-	public String addBottles() {
-		return "Bottle";
+	public LQService(LQRepository lqRepository) {
+		this.lqRepository =lqRepository;
+	}
+	
+	public Liquor addBottles(Liquor liquor) {
+		return lqRepository.save(liquor);
 	}
 
-	public Liquor getBottles(Liquor liquor) {
-		return lqRepository.findAllById(liquor.getId());
+	public List<Liquor> getallBottles(Liquor liquor) {
+		return lqRepository.findAll();
 	}
+	
+	public Liquor getBottles(Liquor liquor) {		
+	   lqRepository.findById(liquor.id);
+	return liquor;
+	}
+
 
 	public String updateBottles() {
 		return "Bottle";
 	}
 
-	public String deleteBottles() {
-		return "Bottle";
+	public String deleteBottles(Liquor liquor) {
+		lqRepository.deleteById(liquor.id);
+		return "DELETED";
 	}
 }
