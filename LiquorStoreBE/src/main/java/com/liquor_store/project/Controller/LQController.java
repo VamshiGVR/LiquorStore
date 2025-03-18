@@ -19,7 +19,7 @@ public class LQController {
 		}
 	
 	@GetMapping("/getdata")
-		public Liquor getBottles() {
+		public Liquor getBottles(Liquor liquor) {
 			return "Bottle";
 		}
 	
