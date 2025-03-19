@@ -9,6 +9,13 @@ on:
     branches: ["main"]
 
 jobs:
+  build-Java:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Setup Java JDK
+      uses: actions/setup-java@v4.7.0
+      with:
+      
   build-test:
     runs-on: ubuntu-latest
      
