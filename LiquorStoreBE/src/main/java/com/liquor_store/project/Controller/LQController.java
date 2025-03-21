@@ -23,27 +23,27 @@ public class LQController {
 		this.lqService =lqService;
 	}
 
-	@PostMapping("/adddata")
+	@PostMapping("/AddData")
 		public Liquor addBottles(@RequestBody Liquor liquor) {
 			return lqService.addBottles(liquor);
 		}
 	
-	@GetMapping("/getalldata")
-		public List<Liquor> getAllBottles(@RequestBody Liquor liquor) {
-			return lqService.getallBottles(liquor);
+	@GetMapping("/GetAllData")
+		public List<Liquor> getAllBottles(   ) {
+			return lqService.getallBottles();
 		}
 	
-	@GetMapping("/getdata")
+	@GetMapping("/GetData")
 	public Liquor getBottles(@RequestBody Liquor liquor) {
 		return lqService.getBottles(liquor);
 	}
 	
-	@PutMapping("/updatedata")
+	@PutMapping("/UpdateData")
 		public String updateBottles() {
 			return "Bottle";
 		}
 	
-	@DeleteMapping("/deletedata")
+	@DeleteMapping("/DeleteData")
 		public String deleteBottles(@RequestBody Liquor liquor) {
 			return lqService.deleteBottles(liquor);
 		}
