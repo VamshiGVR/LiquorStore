@@ -32,13 +32,13 @@ public class Liquor {
 	@Column(name ="SIZE")
 	public String size;
 	
-	@Column(name ="QUANITY")
-	public Long quanity;
+	@Column(name ="QUANTITY")
+	public Long quantity;
 	
 	@Column(name ="PRICE")
 	public double price;
 	
 	@Column(name ="CODE")
-	public long code;
+	public String code;
 
 }

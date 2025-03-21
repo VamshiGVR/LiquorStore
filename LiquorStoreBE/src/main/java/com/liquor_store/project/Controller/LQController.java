@@ -29,7 +29,7 @@ public class LQController {
 		}
 	
 	@GetMapping("/GetAllData")
-		public List<Liquor> getAllBottles(   ) {
+		public List<Liquor> getAllBottles() {
 			return lqService.getallBottles();
 		}
 	
@@ -39,12 +39,18 @@ public class LQController {
 	}
 	
 	@PutMapping("/UpdateData")
-		public String updateBottles() {
-			return "Bottle";
+		public String updateBottles(@RequestBody Liquor liquor) {
+			return lqService.updateBottles(liquor);
 		}
 	
 	@DeleteMapping("/DeleteData")
 		public String deleteBottles(@RequestBody Liquor liquor) {
 			return lqService.deleteBottles(liquor);
 		}
+		
+    @PostMapping("/SendEmail")
+    public String sendDataEmail(@RequestBody Liquor  liquor) {
+    	System.out.print(liquor.id);
+        return lqService.sendDataEmail(liquor);
+    }
 }
