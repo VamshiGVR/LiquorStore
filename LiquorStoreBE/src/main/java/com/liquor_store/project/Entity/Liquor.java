@@ -24,21 +24,21 @@ public class Liquor {
 	public Long id;
 	
 	@Column(name ="LIQUOR_BRAND")
-	private String brand;
+	public String brand;
 	
 	@Column(name ="LIQUOR_NAME")
-	private String name;
+	public String name;
 	
 	@Column(name ="SIZE")
-	private String size;
+	public String size;
 	
 	@Column(name ="QUANITY")
-	private Long quanity;
+	public Long quanity;
 	
 	@Column(name ="PRICE")
-	private double price;
+	public double price;
 	
 	@Column(name ="CODE")
-	private long code;
+	public long code;
 
 }

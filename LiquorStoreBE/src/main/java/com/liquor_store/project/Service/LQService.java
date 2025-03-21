@@ -20,18 +20,27 @@ public class LQService {
 		return lqRepository.save(liquor);
 	}
 
-	public List<Liquor> getallBottles(Liquor liquor) {
+	public List<Liquor> getallBottles( ) {
 		return lqRepository.findAll();
 	}
 	
-	public Liquor getBottles(Liquor liquor) {		
-	   lqRepository.findById(liquor.id);
-	return liquor;
+	public Liquor getBottles(Liquor liquor) {
+		Liquor existLiquor = lqRepository.findById(liquor.id).orElseThrow(()-> new RuntimeException("Bottle not found....."));		
+		return existLiquor;
 	}
 
 
 	public String updateBottles(Liquor liquor) {
-		return "Bottle";
+		Liquor existLiquor = lqRepository.findById(liquor.id).orElseThrow(()-> new RuntimeException("Bottle not found....."));
+		existLiquor.id = liquor.id;
+		existLiquor.brand = liquor.brand;
+		existLiquor.name = liquor.name;
+		existLiquor.size = liquor.size;
+		existLiquor.quanity = liquor.quanity;
+		existLiquor.price = liquor.price;
+		existLiquor.code = liquor.code;
+		return "Bottle "+ existLiquor.id + " is updated" + existLiquor;
+		 
 	}
 
 	public String deleteBottles(Liquor liquor) {
