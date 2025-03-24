@@ -1,5 +1,7 @@
 package com.liquor_store.project.Service;
 
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 import java.util.List;
 
 import org.springframework.stereotype.Service;
@@ -19,6 +21,15 @@ public class LQService {
 	}
 	
 	public Liquor addBottles(Liquor liquor) {
+		
+		LocalDateTime currentDateTime = LocalDateTime.now();
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss");
+        String formattedDateTime = currentDateTime.format(formatter);
+        System.out.println("Formatted Date and Time: " + formattedDateTime);		
+        liquor.datetime = formattedDateTime;
+		System.out.println(currentDateTime);
+		
+		
 		return lqRepository.save(liquor);
 	}
 
@@ -34,7 +45,6 @@ public class LQService {
 
 	public String updateBottles(Liquor liquor) {
 		Liquor existLiquor = lqRepository.findById(liquor.id).orElseThrow(()-> new RuntimeException("Bottle not found....."));
-		System.out.println("here" + liquor.id);
 		existLiquor.id = liquor.id;
 		existLiquor.brand = liquor.brand;
 		existLiquor.name = liquor.name;
@@ -56,6 +66,7 @@ public class LQService {
 		return "DELETED Bottle With ID: "+ liquor.id;
 	}
 	
+	//NOT DONE YET
 	public String sendDataEmail(Liquor liquor) {
 	  /*  if (liquor == null || liquor.id == null) {
 	        throw new IllegalArgumentException("Invalid liquor data. ID is missing.");
