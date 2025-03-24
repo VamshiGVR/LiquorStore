@@ -21,6 +21,7 @@ public class Liquor {
 	
 	@Id
 	@GeneratedValue(strategy= GenerationType.IDENTITY)
+	@Column(name ="ID")
 	public Long id;
 	
 	@Column(name ="LIQUOR_BRAND")
@@ -40,5 +41,8 @@ public class Liquor {
 	
 	@Column(name ="CODE")
 	public String code;
+	
+	@Column(name="ADDED_DATE_TIME")
+	public String datetime;
 
 }
