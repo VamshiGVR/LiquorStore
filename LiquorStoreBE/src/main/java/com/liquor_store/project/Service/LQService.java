@@ -21,15 +21,12 @@ public class LQService {
 	}
 	
 	public Liquor addBottles(Liquor liquor) {
-		
 		LocalDateTime currentDateTime = LocalDateTime.now();
         DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss");
         String formattedDateTime = currentDateTime.format(formatter);
         System.out.println("Formatted Date and Time: " + formattedDateTime);		
         liquor.datetime = formattedDateTime;
 		System.out.println(currentDateTime);
-		
-		
 		return lqRepository.save(liquor);
 	}
 
