@@ -11,15 +11,15 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.liquor_store.project.Entity.Liquor;
-import com.liquor_store.project.Service.LQService;
+import com.liquor_store.project.Service.LiquorService;
 
 @RestController
 @RequestMapping("/LiquorStore")
-public class LQController {
+public class LiquorController {
 	
-	private LQService lqService;
+	private LiquorService lqService;
 	
-	public LQController(LQService lqService) {
+	public LiquorController(LiquorService lqService) {
 		this.lqService =lqService;
 	}
 
