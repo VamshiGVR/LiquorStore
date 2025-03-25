@@ -7,15 +7,15 @@ import java.util.List;
 import org.springframework.stereotype.Service;
 
 import com.liquor_store.project.Entity.Liquor;
-import com.liquor_store.project.Repository.LQRepository;
+import com.liquor_store.project.Repository.LiquorRepository;
 
 @Service
-public class LQService {
+public class LiquorService {
 	
-	private LQRepository lqRepository;
+	private LiquorRepository lqRepository;
 	private final EmailService emailService;
 	
-	public LQService(LQRepository lqRepository,EmailService emailService ) {
+	public LiquorService(LiquorRepository lqRepository,EmailService emailService ) {
 		this.lqRepository =lqRepository;
 		this.emailService = emailService;
 	}
@@ -23,10 +23,7 @@ public class LQService {
 	public Liquor addBottles(Liquor liquor) {
 		LocalDateTime currentDateTime = LocalDateTime.now();
         DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss");
-        String formattedDateTime = currentDateTime.format(formatter);
-        System.out.println("Formatted Date and Time: " + formattedDateTime);		
-        liquor.datetime = formattedDateTime;
-		System.out.println(currentDateTime);
+        liquor.datetime = currentDateTime.format(formatter);
 		return lqRepository.save(liquor);
 	}
 
@@ -38,7 +35,6 @@ public class LQService {
 		Liquor existLiquor = lqRepository.findById(liquor.id).orElseThrow(()-> new RuntimeException("Bottle not found....."));		
 		return existLiquor;
 	}
-
 
 	public String updateBottles(Liquor liquor) {
 		Liquor existLiquor = lqRepository.findById(liquor.id).orElseThrow(()-> new RuntimeException("Bottle not found....."));
@@ -68,12 +64,9 @@ public class LQService {
 	  /*  if (liquor == null || liquor.id == null) {
 	        throw new IllegalArgumentException("Invalid liquor data. ID is missing.");
 	    }*/
-
 	    Liquor existLiquor = lqRepository.findById(liquor.id)
 	            .orElseThrow(() -> new RuntimeException("Bottle not found....."));
-
 	    String subject = "BOTTLE DATA REQUEST " + existLiquor.id + ": " + existLiquor.brand + " " + existLiquor.name;
-	    
 	    String body = String.format(
 	        "Dear Customer,\n\n" +
 	        "A bottle data request has been made:\n\n" +
@@ -87,7 +80,6 @@ public class LQService {
 	    );
 
 	    emailService.sendEmail(subject, body);
-	    
 	    return "EMAIL SENT SUCCESSFULLY!!!!";
 	}
 

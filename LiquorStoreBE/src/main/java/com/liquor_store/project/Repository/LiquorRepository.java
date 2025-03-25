@@ -4,6 +4,6 @@ import org.springframework.data.jpa.repository.JpaRepository;
 
 import com.liquor_store.project.Entity.Liquor;
 
-public interface LQRepository extends JpaRepository<Liquor, Long>{
+public interface LiquorRepository extends JpaRepository<Liquor, Long>{
 
 }
