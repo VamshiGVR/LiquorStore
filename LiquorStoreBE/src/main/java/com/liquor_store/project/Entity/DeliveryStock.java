@@ -20,7 +20,7 @@ public class DeliveryStock {
 	public long id;
 	
 	@Column(name="DELIVERY_DATE")
-	public String delivery_date;
+	public String deliveryDate;
 	
 	@Column(name="CODE")
 	public String code;

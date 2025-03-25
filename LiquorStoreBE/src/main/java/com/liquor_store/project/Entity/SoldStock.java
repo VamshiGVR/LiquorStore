@@ -39,7 +39,7 @@ public class SoldStock {
 	@Column(name ="CODE")
 	public String code;
 	
-	@Column(name="Alcoholic")
+	@Column(name="IS_AlCOHOL")
 	public boolean Alcohol;
 
 	@Column(name="DATE_TIME")
@@ -49,22 +49,20 @@ public class SoldStock {
 	public boolean online;
 	
 	@Column(name="MODE_OF_PAYMENT")
-	public String modeofpayment;
+	public String modeOfPayment;
 	
 	@Column(name ="PRICE")
 	public double price;
 	
-	@Column(name="tax")
+	@Column(name="TAX")
 	public double tax;
 	
 	@Column(name="CUSTOMER_NAME")
-	public String customername;
+	public String customerName;
 	
 	@Column(name="EMAIL_ID")
-	public String emailid;
+	public String emailId;
 	
 	@Column(name="PHONE_NUMBER")
-	public Long phonenumber;
+	public Long phoneNumber;
 }
-
-
