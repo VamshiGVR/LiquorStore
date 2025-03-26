@@ -48,18 +48,18 @@ public class SoldStockController {
 		return soldStockService.deleteSoldBottles(soldStock);
 	}
 	
-	@GetMapping("/PrintDailyReport")
-	public String printDailyReport() {
-		return "PRINTED";
+	@GetMapping("/GetDailyReport")
+	public String getDailyReport() {
+		return soldStockService.getDaillyReport();
 	}
 	
-	@GetMapping("/PrintMonthlyReport")
-	public String printMonthlyReport() {
+	@GetMapping("/GetMonthlyReport")
+	public String getMonthlyReport() {
 		return "PRINTED";
 	}
 
-	@GetMapping("/PrintYearlyReport")
-	public String printYearlyReport() {
+	@GetMapping("/GetYearlyReport")
+	public String getYearlyReport() {
 		return "PRINTED";
 	}
 }

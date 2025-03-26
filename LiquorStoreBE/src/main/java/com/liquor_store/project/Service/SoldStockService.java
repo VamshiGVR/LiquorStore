@@ -56,19 +56,22 @@ public class SoldStockService {
 	
 	//Should add all daily data into an PDF Sheet & Should send to a mail id. 
 	// PDF name should be "monthly report of $date + $Day name with month & year"
-	public String printDaillyReport() {
+	public String getDaillyReport() {
+		long totalNoOfTransactions = soldStockRepository.count();
+		System.out.println("Added" + totalNoOfTransactions);
+		
 		return "PRINTED";
 	}
 	
 	//Should add all Monthly data into an PDF Sheet & Should send to a mail id. 
 	// PDF name should be "YMonthly report of $monthname, Todate to fromdate"
-	public String printMonthlyReport() {
+	public String getMonthlyReport() {
 		return "PRINTED";
 	}
 	
 	// Should add all Yearly data into an PDF Sheet & Should send to a mail id.
 	// PDF name should be "Yearly report of $yearname, Todate to fromdate"
-	public String printYearlyReport() {
+	public String getYearlyReport() {
 		return "PRINTED";
 	}
 }
