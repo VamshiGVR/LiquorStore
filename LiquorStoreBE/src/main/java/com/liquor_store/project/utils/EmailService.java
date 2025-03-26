@@ -1,4 +1,4 @@
-package com.liquor_store.project.Service;
+package com.liquor_store.project.utils;
 
 import org.springframework.mail.SimpleMailMessage;
 import org.springframework.mail.javamail.JavaMailSender;
