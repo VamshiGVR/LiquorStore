@@ -13,6 +13,7 @@ import org.springframework.web.bind.annotation.RestController;
 import com.liquor_store.project.Entity.Liquor;
 import com.liquor_store.project.Service.LiquorService;
 
+
 @RestController
 @RequestMapping("/LiquorStore")
 public class LiquorController {
@@ -50,7 +51,6 @@ public class LiquorController {
 		
     @PostMapping("/SendEmail")
     public String sendDataEmail(@RequestBody Liquor  liquor) {
-    	System.out.print(liquor.id);
         return lqService.sendDataEmail(liquor);
     }
 }

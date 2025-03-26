@@ -9,6 +9,9 @@ import org.springframework.stereotype.Service;
 import com.liquor_store.project.Entity.Liquor;
 import com.liquor_store.project.Repository.LiquorRepository;
 
+import lombok.extern.slf4j.Slf4j;
+
+@Slf4j
 @Service
 public class LiquorService {
 	
@@ -64,12 +67,14 @@ public class LiquorService {
 	  /*  if (liquor == null || liquor.id == null) {
 	        throw new IllegalArgumentException("Invalid liquor data. ID is missing.");
 	    }*/
-	    Liquor existLiquor = lqRepository.findById(liquor.id)
+		
+        //log.info("Sending email for Liquor ID: {}", liquor.id);
+		Liquor existLiquor = lqRepository.findById(liquor.id)
 	            .orElseThrow(() -> new RuntimeException("Bottle not found....."));
 	    String subject = "BOTTLE DATA REQUEST " + existLiquor.id + ": " + existLiquor.brand + " " + existLiquor.name;
 	    String body = String.format(
 	        "Dear Customer,\n\n" +
-	        "A bottle data request has been made:\n\n" +
+	        "The bottle data you have been requested is:\n\n" +
 	        "Brand: %s\n" +
 	        "Name: %s\n" +
 	        "Size: %s\n" +
@@ -80,7 +85,7 @@ public class LiquorService {
 	    );
 
 	    emailService.sendEmail(subject, body);
-	    return "EMAIL SENT SUCCESSFULLY!!!!";
+	    return "EMAIL SENT SUCCESSFULLY!!!! For the bottle: "+ liquor.id;
 	}
 
 }
