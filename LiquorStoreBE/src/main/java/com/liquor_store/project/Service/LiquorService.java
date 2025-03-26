@@ -8,6 +8,7 @@ import org.springframework.stereotype.Service;
 
 import com.liquor_store.project.Entity.Liquor;
 import com.liquor_store.project.Repository.LiquorRepository;
+import com.liquor_store.project.utils.EmailService;
 
 import lombok.extern.slf4j.Slf4j;
 
