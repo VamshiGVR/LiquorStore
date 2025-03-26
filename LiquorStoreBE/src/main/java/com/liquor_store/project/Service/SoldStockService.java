@@ -1,5 +1,7 @@
 package com.liquor_store.project.Service;
 
+import java.util.List;
+
 import org.springframework.stereotype.Service;
 
 import com.liquor_store.project.Entity.SoldStock;
@@ -18,19 +20,55 @@ public class SoldStockService {
 		return soldStockRepository.save(soldStock);
 	}
 		
-	public String getAllBottles(){
-		return "Sold";
+	public List<SoldStock> getAllBottles(){
+		return soldStockRepository.findAll();
 	}
 
-	public String getSoldBottle(){
-		return "SoldbyID";
+	public SoldStock getSoldBottleById(SoldStock soldStock){
+		return soldStockRepository.findById(soldStock.id).orElseThrow(() -> new RuntimeException("Bottle not found"));
 	}	
 	
-	public String updateSoldBottles() {
-		return "Sold";
+	public String updateSoldBottles(SoldStock soldStock) {
+		SoldStock updatedBottle = soldStockRepository.findById(soldStock.id).orElseThrow(() -> new RuntimeException("Bottle not found"));
+		updatedBottle.id = soldStock.id;
+		updatedBottle.Alcohol = soldStock.Alcohol;
+		updatedBottle.brand = soldStock.brand;
+		updatedBottle.code = soldStock.code;
+		updatedBottle.customerName = soldStock.customerName;
+		updatedBottle.emailId=soldStock.emailId;
+		updatedBottle.modeOfPayment = soldStock.modeOfPayment;
+		updatedBottle.name = soldStock.name;
+		updatedBottle.online = soldStock.online;
+		updatedBottle.phoneNumber = soldStock.phoneNumber;
+		updatedBottle.price = soldStock.price;
+		updatedBottle.quantity = soldStock.quantity;
+		updatedBottle.size = soldStock.size;
+		updatedBottle.tax = soldStock.tax;
+		soldStockRepository.save(updatedBottle);
+		return "Sold Bottle Data was updated for bottle id: " + updatedBottle.id;
 	}
 	
-	public String deleteSoldBottles() {
-		return "DELETE";
+	//Should delete data. 
+	public String deleteSoldBottles(SoldStock soldStock) {
+		soldStockRepository.deleteById(soldStock.id);
+		return "Deleted the Sale of bottle id: " + soldStock.id;
+	}
+	
+	//Should add all daily data into an PDF Sheet & Should send to a mail id. 
+	// PDF name should be "monthly report of $date + $Day name with month & year"
+	public String printDaillyReport() {
+		return "PRINTED";
+	}
+	
+	//Should add all Monthly data into an PDF Sheet & Should send to a mail id. 
+	// PDF name should be "YMonthly report of $monthname, Todate to fromdate"
+	public String printMonthlyReport() {
+		return "PRINTED";
+	}
+	
+	// Should add all Yearly data into an PDF Sheet & Should send to a mail id.
+	// PDF name should be "Yearly report of $yearname, Todate to fromdate"
+	public String printYearlyReport() {
+		return "PRINTED";
 	}
 }

@@ -1,5 +1,7 @@
 package com.liquor_store.project.Controller;
 
+import java.util.List;
+
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -26,23 +28,38 @@ public class SoldStockController {
 		return soldStockService.addSoldBottles(soldStock);
 	}
 	
-	@GetMapping("/GetSoldLiquorStock")
-	public String getAllBottles(@RequestBody SoldStock soldStock ){
-		return "Sold";
+	@GetMapping("/GetAllSoldLiquorStock")
+	public List<SoldStock> getAllSoldBottles(){
+		return soldStockService.getAllBottles();
 	}
-
+	
 	@GetMapping("/GetSoldLiquorStock")
-	public String getSoldBottle(){
-		return "SoldbyID";
+	public SoldStock getSoldBottleById(@RequestBody SoldStock soldStock ){
+		return soldStockService.getSoldBottleById(soldStock);
 	}
 	
 	@PutMapping("/UpdateSoldLiquorStock")
-	public String updateSoldBottles() {
-		return "Sold";
+	public String updateSoldBottles(@RequestBody SoldStock soldStock) {
+		return soldStockService.updateSoldBottles(soldStock);
 	}
 	
 	@DeleteMapping("/DeleteSoldLiquorStock")
-	public String deleteSoldBottles() {
-		return "DELETE";
+	public String deleteSoldBottles(@RequestBody SoldStock soldStock) {
+		return soldStockService.deleteSoldBottles(soldStock);
+	}
+	
+	@GetMapping("/PrintDailyReport")
+	public String printDailyReport() {
+		return "PRINTED";
+	}
+	
+	@GetMapping("/PrintMonthlyReport")
+	public String printMonthlyReport() {
+		return "PRINTED";
+	}
+
+	@GetMapping("/PrintYearlyReport")
+	public String printYearlyReport() {
+		return "PRINTED";
 	}
 }
