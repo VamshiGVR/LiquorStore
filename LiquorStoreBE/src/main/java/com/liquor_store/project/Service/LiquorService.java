@@ -27,10 +27,10 @@ public class LiquorService {
 		LocalDateTime currentDateTime = LocalDateTime.now();
         DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss");
         liquor.datetime = currentDateTime.format(formatter);
-		return lqRepository.save(liquor);
+		return lqRepository.save(liquor);		
 	}
 
-	public List<Liquor> getallBottles( ) {
+	public List<Liquor> getAllBottles( ) {
 		return lqRepository.findAll();
 	}
 	
@@ -61,19 +61,13 @@ public class LiquorService {
 		lqRepository.deleteById(liquor.id);
 		return "DELETED Bottle With ID: "+ liquor.id;
 	}
-	
-	//NOT DONE YET
+
 	public String sendDataEmail(Liquor liquor) {
-	  /*  if (liquor == null || liquor.id == null) {
-	        throw new IllegalArgumentException("Invalid liquor data. ID is missing.");
-	    }*/
-		
-        //log.info("Sending email for Liquor ID: {}", liquor.id);
-		Liquor existLiquor = lqRepository.findById(liquor.id)
-	            .orElseThrow(() -> new RuntimeException("Bottle not found....."));
+	        	//log.info("Sending email for Liquor ID: {}", liquor.id);
+	    Liquor existLiquor = lqRepository.findById(liquor.id).orElseThrow(() -> new RuntimeException("Bottle not found....."));
 	    String subject = "BOTTLE DATA REQUEST " + existLiquor.id + ": " + existLiquor.brand + " " + existLiquor.name;
 	    String body = String.format(
-	        "Dear Customer,\n\n" +
+	    "Dear Customer,\n\n" +
 	        "The bottle data you have been requested is:\n\n" +
 	        "Brand: %s\n" +
 	        "Name: %s\n" +
@@ -81,11 +75,9 @@ public class LiquorService {
 	        "Price: %.2f\n\n" +
 	        "Thank you,\n" +
 	        "LQ Team",
-	        existLiquor.brand, existLiquor.name, existLiquor.size, existLiquor.price
-	    );
+	        existLiquor.brand, existLiquor.name, existLiquor.size, existLiquor.price);
 
 	    emailService.sendEmail(subject, body);
 	    return "EMAIL SENT SUCCESSFULLY!!!! For the bottle: "+ liquor.id;
-	}
-
+	 }
 }

@@ -26,32 +26,32 @@ public class LiquorController {
 		this.lqService =lqService;
 	}
 
-	@PostMapping("/AddData")
+	@PostMapping("/AddLiquorStock")
 		public Liquor addBottles(@RequestBody Liquor liquor) {
 			return lqService.addBottles(liquor);
 		}
 	
-	@GetMapping("/GetAllData")
+	@GetMapping("/GetAllLiquorStock")
 		public List<Liquor> getAllBottles() {
-			return lqService.getallBottles();
+			return lqService.getAllBottles();
 		}
 	
-	@GetMapping("/GetData")
+	@GetMapping("/GetLiquorStock")
 	public Liquor getBottles(@RequestBody Liquor liquor) {
 		return lqService.getBottles(liquor);
 	}
 	
-	@PutMapping("/UpdateData")
+	@PutMapping("/UpdateLiquorStock")
 		public String updateBottles(@RequestBody Liquor liquor) {
 			return lqService.updateBottles(liquor);
 		}
 	
-	@DeleteMapping("/DeleteData")
+	@DeleteMapping("/DeleteLiquorStock")
 		public String deleteBottles(@RequestBody Liquor liquor) {
 			return lqService.deleteBottles(liquor);
 		}
 		
-    @PostMapping("/SendEmail")
+    @PostMapping("/SendEmailOfLiquorStock")
     public String sendDataEmail(@RequestBody Liquor  liquor) {
         return lqService.sendDataEmail(liquor);
     }
